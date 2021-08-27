@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="530.0" prefWidth="840.0" style="-fx-background-color: #73d2ce" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+  <children>
+    <VBox layoutX="687.0" layoutY="144.0">
+      <children>
+        <Label prefHeight="27.0" prefWidth="149.0" text="Total Value:" textFill="WHITE">
+          <font>
+            <Font name="System Bold Italic" size="17.0" />
+          </font>
+        </Label>
+        <Label fx:id="totalValue1">
+          <font>
+            <Font size="17.0" />
+          </font>
+        </Label>
+      </children>
+    </VBox>
+    <VBox layoutX="687.0" layoutY="84.0">
+      <children>
+        <Label prefHeight="27.0" prefWidth="149.0" text="Unique Folio ID:" textFill="WHITE">
+          <font>
+            <Font name="System Bold Italic" size="17.0" />
+          </font>
+        </Label>
+        <Label fx:id="folioID">
+          <font>
+            <Font size="17.0" />
+          </font>
+        </Label>
+      </children>
+    </VBox>
+    <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="840.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="Window">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#help" text="Help" />
+            <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Folio">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#openFolio" text="Open" />
+            <MenuItem mnemonicParsing="false" onAction="#createFolio" text="Create" />
+            <MenuItem mnemonicParsing="false" onAction="#saveFolio" text="Save" />
+            <MenuItem mnemonicParsing="false" onAction="#deleteFolio" text="Delete" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <HBox alignment="BOTTOM_RIGHT" layoutX="14.0" layoutY="51.0" spacing="15.0">
+      <children>
+        <VBox>
+          <children>
+            <Label text="Enter Ticker Symbol - " />
+            <TextField fx:id="tickerID" />
+            <Label text="Enter Stock Name -" />
+            <TextField fx:id="stockName" />
+            <Label text="Enter No. of Shares - " />
+            <TextField fx:id="noOfShares" />
+          </children>
+        </VBox>
+        <Button mnemonicParsing="false" onAction="#addNewStock" prefHeight="45.0" prefWidth="75.0" style="-fx-background-color: lightblue; -fx-text-fill: black; -fx-border-color: black;  -fx-border-width: 3px;                                                   -fx-border-radius: 5px; -fx-background-radius: 9px; -fx-background-size: cover; -fx-alignment: center;" text="ADD">
+          <opaqueInsets>
+            <Insets left="100.0" right="100.0" />
+          </opaqueInsets>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#closeFolio" style="-fx-background-color: black;                                          -fx-text-fill: white; -fx-border-color: lightblue;  -fx-border-width: 3px;  -fx-border-radius: 5px;                                          -fx-background-radius: 9px; -fx-background-size: cover; -fx-alignment: center;" text="Close Folio" />
+        <Button mnemonicParsing="false" onAction="#deleteStock" style="-fx-background-color: black;                                          -fx-text-fill: white; -fx-border-color: lightblue; -fx-border-width: 3px;  -fx-border-radius: 5px;                                           -fx-background-radius: 9px; -fx-background-size: cover; -fx-alignment: center;" text="Delete Stock" />
+        <Button mnemonicParsing="false" onAction="#editStock" style="-fx-background-color: black;                                          -fx-text-fill: white; -fx-border-color: lightblue;  -fx-border-width: 3px;  -fx-border-radius: 5px;                                          -fx-background-radius: 9px; -fx-background-size: cover; -fx-alignment: center;" text="Edit Stock" />
+      </children>
+    </HBox>
+    <TabPane fx:id="tabPane" layoutY="194.0" prefHeight="337.0" prefWidth="840.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab fx:id="howTo" text="How To.." >
+          <content>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="259.0" prefWidth="547.0">
+              <children>
+                <Label layoutX="29.0" layoutY="14.0" text="To Start:">
+                  <font>
+                    <Font name="System Bold" size="22.0" />
+                  </font>
+                </Label>
+                <TextArea editable="false" layoutX="72.0" layoutY="43.0" prefHeight="150.0" prefWidth="721.0" text="(1) Create a new Folio by clicking the Folio tab from the menu bar at the top or the &quot;+&quot; tab. --&gt; Other Folio options can also &#10;be found here.&#10;&#10;(2) To add stock to a Folio, click the tab of the desired  Folio and fill in the text boxes with that given Stock information. This &#10;followed by the Add button.&#10;&#10;(3) Clicking one of the three black buttons will either, Close the selected Folio, Delete the selected Stock and or Edit the selected &#10;Stock." />
+                <Label layoutX="24.0" layoutY="190.0" text="To Finish:">
+                  <font>
+                    <Font name="System Bold" size="22.0" />
+                  </font>
+                </Label>
+                <TextArea editable="false" layoutX="72.0" layoutY="219.0" prefHeight="77.0" prefWidth="721.0" text="(1) Click the Window option from the menu bar at the top and close the application down using the close button.&#10;&#10;(2) Before any Closing or Deleting of a Folio you will be asked if you are sure. This is to ensure no mistakes are made." />
+              </children></AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="newTab" text="+" >
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <CubicCurve controlX1="130.0" controlX2="50.0" controlY1="-19.5" controlY2="100.0" endX="157.0" endY="56.5" fill="#1f93ff00" layoutX="522.0" layoutY="60.0" startX="44.0" startY="-9.0" stroke="BLACK" strokeLineCap="ROUND" />
+    <VBox layoutX="411.0" layoutY="34.0">
+      <children>
+        <Label text="Please take note so loading" textFill="WHITE" />
+        <Label text="can take place later" textFill="WHITE" />
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
