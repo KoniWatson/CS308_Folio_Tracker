@@ -1,2 +1,2 @@
-# CS308 - Model.Folio Tracker 
+# CS308 - Folio Tracker 
 
